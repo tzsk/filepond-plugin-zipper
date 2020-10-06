@@ -1,0 +1,51 @@
+{
+  "name": "filepond-plugin-zipper",
+  "version": "1.0.0",
+  "description": "Zip Filepond Directory Uploads",
+  "source": "src/main.ts",
+  "main": "dist/zipper.js",
+  "module": "dist/zipper.esm.js",
+  "unpkg": "dist/zipper.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tzsk/filepond-plugin-zipper.git"
+  },
+  "keywords": [
+    "filepond",
+    "zip directory",
+    "upload zipped directory",
+    "filepond zip directory"
+  ],
+  "author": {
+    "name": "Kazi Ahmed",
+    "email": "mailtokmahmed@gmail.com",
+    "url": "https://github.com/tzsk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tzsk/filepond-zipper/issues"
+  },
+  "homepage": "https://github.com/tzsk/filepond-zipper#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/jest": "^26.0.14",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
+    "babel-jest": "^26.5.0",
+    "eslint": "^7.10.0",
+    "filepond": "^4.21.0",
+    "jest": "^26.5.0",
+    "microbundle": "^0.12.4",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "jszip": "^3.5.0"
+  }
+}
