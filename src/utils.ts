@@ -3,18 +3,18 @@ import { Item, ItemType } from "./types";
 
 const Zip = window.JSZip || JSZip;
 
-export const getDirectoryGroups = (items: ItemType[]): Map<string, ItemType[]> => {
-  const directories = new Map();
+export const getDirectoryGroups = (items: ItemType[]): Record<string, ItemType[]> => {
+  const directories = {};
 
   items
     .filter((item) => item._relativePath)
     .forEach((item) => {
       const [, group] = item._relativePath.split("/");
-      if (!directories.has(group)) {
-        directories.set(group, []);
+      if (!directories[group]) {
+        directories[group] = [];
       }
 
-      directories.get(group).push(item);
+      directories[group].push(item);
     });
 
   return directories;
@@ -22,13 +22,13 @@ export const getDirectoryGroups = (items: ItemType[]): Map<string, ItemType[]> =
 
 export const generateZip = (items: ItemType[]): Promise<ItemType[]> => {
   const directories = getDirectoryGroups(items);
-  const generators = Array.from(directories.keys()).map(async (name) => {
+  const generators = Object.keys(directories).map(async (name) => {
     const zip = new Zip();
-    directories.get(name).forEach((file) => {
+    directories[name].forEach((file) => {
       zip.file(file._relativePath, file);
     });
 
-    directories.delete(name);
+    delete directories[name];
 
     const file = await zip.generateAsync({ type: "blob" });
 
