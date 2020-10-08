@@ -1,5 +1,7 @@
-import Zip from "jszip";
+import JSZip from "jszip";
 import { Item, ItemType } from "./types";
+
+const Zip = window.JSZip || JSZip;
 
 export const getDirectoryGroups = (items: ItemType[]): Map<string, ItemType[]> => {
   const directories = new Map();

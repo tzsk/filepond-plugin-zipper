@@ -1,4 +1,4 @@
-import Zipper from "../src/main";
+import Zipper from "../src/zipper";
 import { Item, ItemType } from "../src/types";
 import {generateZip} from "../src/utils";
 

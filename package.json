@@ -2,12 +2,12 @@
   "name": "filepond-plugin-zipper",
   "version": "1.0.0",
   "description": "Zip Filepond Directory Uploads",
-  "source": "src/main.ts",
+  "source": "src/zipper.ts",
   "main": "dist/zipper.js",
   "module": "dist/zipper.esm.js",
-  "unpkg": "dist/zipper.umd.js",
+  "unpkg": "dist/zipper.min.js",
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --name=FilepondZipper",
     "dev": "microbundle watch",
     "test": "jest"
   },

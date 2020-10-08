@@ -1,3 +1,9 @@
+import JSZip from "jszip";
+declare global {
+    interface Window {
+        JSZip: JSZip;
+    }
+}
 interface TargetFilter {
     FILTER_DROPPED_ITEMS: string;
 }
