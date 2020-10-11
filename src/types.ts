@@ -5,7 +5,7 @@ declare global {
 }
 
 interface TargetFilter {
-  FILTER_DROPPED_ITEMS: string;
+  FILTER_ADDED_ITEMS: string;
 }
 
 export type FilterKey = keyof TargetFilter;

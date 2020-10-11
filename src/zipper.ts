@@ -4,7 +4,7 @@ import {generateZip} from "./utils";
 const Zipper = (callback?: ZipperCallback) => ({
   addFilter,
 }: PluginOptions): Filter => {
-  addFilter("FILTER_DROPPED_ITEMS", async (items) => {
+  addFilter("FILTER_ADDED_ITEMS", async (items) => {
     const make = () => generateZip(items);
 
     const zipFiles = callback
