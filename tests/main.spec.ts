@@ -3,9 +3,8 @@ import {Item, ItemType} from '../src/types';
 import {generateZip} from '../src/utils';
 
 const getItems = (count = 1, path = null): ItemType[] => {
-  const keys = new Array(count).keys();
-  // eslint-disable-next-line unicorn/prefer-spread
-  return [...Array.from(keys)].map((value, index) => {
+  const keys = new Array(count).map((v, i) => i);
+  return [...keys].map((value, index) => {
     const item = new Item([`${index}`], `${index}.jpg`, {type: 'text/plain'});
     if (path) {
       item._relativePath = `/${path}/${item.name}`;
