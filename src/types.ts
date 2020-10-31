@@ -1,11 +1,13 @@
-import JSZip from "jszip";
+import JSZip from 'jszip';
 
 declare global {
-  interface Window { JSZip: JSZip }
+  interface Window {
+    JSZip: JSZip;
+  }
 }
 
 interface TargetFilter {
-  FILTER_ADDED_ITEMS: string;
+  ADD_ITEMS: string;
 }
 
 export type FilterKey = keyof TargetFilter;
@@ -25,7 +27,7 @@ export interface Filter {
   options: unknown;
 }
 
-export type ZipperCallback = (items: Promise<ItemType[]>) => ItemType[];
+export type ZipperCallback = (items: Promise<ItemType>[]) => ItemType[];
 
 export class Item extends File implements ItemType {
   _relativePath?: string;

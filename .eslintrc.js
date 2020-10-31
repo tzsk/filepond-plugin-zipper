@@ -4,8 +4,8 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
+      "eslint-config-tc",
+      "eslint-config-typescript-tc",
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -16,5 +16,16 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+      "import/extensions": "off",
+      "import/no-unresolved": "off",
+      "callback-return": "off",
     }
 };
+
+// "extends": [
+//   "eslint-config-tc",
+//   "eslint-config-typescript-tc",
+// ],
+// "rules": {
+//   "import/extensions": "off",
+// }
