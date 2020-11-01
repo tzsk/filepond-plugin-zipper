@@ -13,7 +13,13 @@ export interface PluginOptions {
 export interface Filter {
     options: unknown;
 }
-export declare type ZipperCallback = (items: Promise<ItemType>[]) => ItemType[];
+export interface Metadata {
+    percent: number;
+    currentFile: string;
+}
+export declare type OnUpdateCallback = (metadata: Metadata) => void;
+export declare type GeneratorCallback = (onUpdate?: OnUpdateCallback) => Promise<ItemType>;
+export declare type ZipperCallback = (generators: GeneratorCallback[]) => unknown;
 export declare class Item extends File implements ItemType {
     _relativePath?: string;
 }

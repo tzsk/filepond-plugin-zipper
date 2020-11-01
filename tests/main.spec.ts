@@ -1,4 +1,4 @@
-import Zipper from '../src/zipper';
+import Zipper from '../src/main';
 import {Item, ItemType} from '../src/types';
 import {generateZip} from '../src/utils';
 
@@ -42,7 +42,7 @@ describe('Plugin', () => {
     const pictures = getItems(30, 'pictures/event');
     const documents = getItems(60, 'documents');
 
-    const generate = generateZip([...pictures, ...documents]);
+    generateZip([...pictures, ...documents]);
     const callback = jest.fn();
 
     const options = Zipper(callback)({addFilter});
@@ -52,6 +52,5 @@ describe('Plugin', () => {
     expect(options).toStrictEqual({options: {}});
     expect(files).toHaveLength(3);
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(callback).toHaveBeenCalledWith(generate);
   });
 });

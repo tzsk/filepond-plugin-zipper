@@ -19,7 +19,16 @@ export interface Filter {
   options: unknown;
 }
 
-export type ZipperCallback = (items: Promise<ItemType>[]) => ItemType[];
+export interface Metadata {
+  percent: number;
+  currentFile: string;
+}
+
+export type OnUpdateCallback = (metadata: Metadata) => void;
+
+export type GeneratorCallback = (onUpdate?: OnUpdateCallback) => Promise<ItemType>;
+
+export type ZipperCallback = (generators: GeneratorCallback[]) => unknown;
 
 export class Item extends File implements ItemType {
   _relativePath?: string;
