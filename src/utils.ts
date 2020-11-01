@@ -1,9 +1,9 @@
 import JSZip from 'jszip';
 import {Item, ItemType} from './types';
 
-export const getDirectoryGroups = (items: ItemType[]): Record<string, ItemType[]> => {
-  const directories = {};
+const directories = {};
 
+export const getDirectoryGroups = (items: ItemType[]): Record<string, ItemType[]> => {
   items
     .filter((item) => item._relativePath)
     .forEach((item) => {
@@ -20,7 +20,7 @@ export const getDirectoryGroups = (items: ItemType[]): Record<string, ItemType[]
 };
 
 export const generateZip = (items: ItemType[]): Promise<ItemType>[] => {
-  const directories = getDirectoryGroups(items);
+  getDirectoryGroups(items);
 
   return Object.keys(directories).map(async (name) => {
     const zip = new JSZip();

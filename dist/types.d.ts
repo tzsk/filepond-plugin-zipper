@@ -1,9 +1,3 @@
-import JSZip from 'jszip';
-declare global {
-    interface Window {
-        JSZip: JSZip;
-    }
-}
 interface TargetFilter {
     ADD_ITEMS: string;
 }
