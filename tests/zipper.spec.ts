@@ -1,4 +1,4 @@
-import FilepondZipper from '../src/main';
+import FilepondZipper from '../src/zipper';
 import {Item, ItemType} from '../src/types';
 import {generateZip} from '../src/utils';
 
