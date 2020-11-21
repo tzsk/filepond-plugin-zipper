@@ -114,3 +114,4 @@ out
 .yarn/install-state.gz
 .pnp.*
 index.html
+.DS_Store

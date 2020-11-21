@@ -1,7 +1,7 @@
 import {Filter, PluginOptions, ZipperCallback} from './types';
 import {generateZip} from './utils';
 
-const Zipper = (callback?: ZipperCallback) => ({addFilter}: PluginOptions): Filter => {
+const FilepondZipper = (callback?: ZipperCallback) => ({addFilter}: PluginOptions): Filter => {
   addFilter('ADD_ITEMS', async (items) => {
     const generators = generateZip(items);
     const plainFiles = items.filter((item) => !item._relativePath);
@@ -20,4 +20,4 @@ const Zipper = (callback?: ZipperCallback) => ({addFilter}: PluginOptions): Filt
   return {options: {}};
 };
 
-export default Zipper;
+export default FilepondZipper;
