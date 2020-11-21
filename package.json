@@ -9,8 +9,9 @@
   "scripts": {
     "build": "microbundle --name FilepondZipper --globals jszip=JSZip",
     "dev": "microbundle watch --name FilepondZipper --globals jszip=JSZip",
-    "test": "jest",
-    "test:ci": "jest --ci --runInBand"
+    "lint": "eslint src",
+    "test": "jest --verbose",
+    "test:ci": "jest --ci --runInBand --verbose"
   },
   "repository": {
     "type": "git",
