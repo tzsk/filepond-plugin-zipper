@@ -1,4 +1,4 @@
-import Zipper from '../src/main';
+import FilepondZipper from '../src/main';
 import {Item, ItemType} from '../src/types';
 import {generateZip} from '../src/utils';
 
@@ -21,7 +21,7 @@ describe('Plugin', () => {
       filters.push(callback);
     };
 
-    const options = Zipper()({addFilter});
+    const options = FilepondZipper()({addFilter});
     // Execute
     const files = await filters[0]([
       ...getItems(2),
@@ -45,7 +45,7 @@ describe('Plugin', () => {
     generateZip([...pictures, ...documents]);
     const callback = jest.fn();
 
-    const options = Zipper(callback)({addFilter});
+    const options = FilepondZipper(callback)({addFilter});
     // Execute
     const files = await filters[0]([...getItems(2), ...pictures, ...documents, ...getItems()]);
 
