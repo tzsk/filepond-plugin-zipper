@@ -1,6 +1,6 @@
 {
   "name": "filepond-plugin-zipper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Zip Filepond Directory Uploads",
   "source": "src/zipper.ts",
   "main": "dist/zipper.js",
