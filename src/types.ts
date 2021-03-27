@@ -5,6 +5,7 @@ interface TargetFilter {
 export type FilterKey = keyof TargetFilter;
 
 export interface ItemType extends File {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   _relativePath?: string;
 }
 
@@ -31,5 +32,6 @@ export type GeneratorCallback = (onUpdate?: OnUpdateCallback) => Promise<ItemTyp
 export type ZipperCallback = (generators: GeneratorCallback[]) => unknown;
 
 export class Item extends File implements ItemType {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   _relativePath?: string;
 }

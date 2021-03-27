@@ -29,9 +29,10 @@ export const generateZip = (items: ItemType[]): GeneratorCallback[] => {
       zip.file(file._relativePath, file);
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
     delete directories[name];
 
-    return async (onUpdate?: OnUpdateCallback) => {
+    return async (onUpdate?: OnUpdateCallback): Promise<ItemType> => {
       const file = await zip.generateAsync({type: 'blob'}, onUpdate);
 
       return new Item([file], `${name}.zip`);
