@@ -40,7 +40,7 @@
     "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.4.0",
-    "babel-jest": "^26.5.0",
+    "babel-jest": "^27.0.1",
     "eslint": "^7.12.1",
     "eslint-config-tc": "^16.1.0",
     "eslint-config-typescript-tc": "^3.0.0",
