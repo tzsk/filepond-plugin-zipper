@@ -1,0 +1,46 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "23:30"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.15.0
+    - 4.17.0
+    - 4.18.0
+    - 4.20.0
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.15.0
+    - 4.17.0
+    - 4.18.0
+    - 4.20.0
+  - dependency-name: eslint-config-typescript-tc
+    versions:
+    - 2.0.0
+  - dependency-name: eslint-plugin-jest
+    versions:
+    - 24.2.0
+    - 24.2.1
+    - 24.3.1
+  - dependency-name: eslint
+    versions:
+    - 7.22.0
+  - dependency-name: "@babel/preset-typescript"
+    versions:
+    - 7.13.0
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.13.0
+    - 7.13.1
+  - dependency-name: typescript
+    versions:
+    - 4.2.2
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.13.0
+    - 7.13.5
