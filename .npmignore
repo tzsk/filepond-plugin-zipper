@@ -1,0 +1,11 @@
+.github/
+assets/
+src/
+tests/
+
+.editorconfig
+.eslintrc.js
+.eslintignore
+babel.config.js
+jest.config.js
+tsconfig.json
