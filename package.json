@@ -1,6 +1,6 @@
 {
   "name": "filepond-plugin-zipper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Zip Filepond Directory Uploads",
   "source": "src/zipper.ts",
   "main": "dist/zipper.js",
@@ -51,6 +51,7 @@
     "eslint-plugin-unicorn": "^22.0.0",
     "filepond": "^4.21.0",
     "jest": "^28.1.2",
+    "jest-environment-jsdom": "^28.1.2",
     "microbundle": "^0.15.0",
     "prettier": "^2.1.2",
     "typescript": "^4.0.3"
