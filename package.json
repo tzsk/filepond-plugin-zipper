@@ -1,6 +1,6 @@
 {
   "name": "filepond-plugin-zipper",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Zip Filepond Directory Uploads",
   "source": "src/zipper.ts",
   "main": "dist/zipper.js",
@@ -33,6 +33,9 @@
     "url": "https://github.com/tzsk/filepond-plugin-zipper/issues"
   },
   "homepage": "https://github.com/tzsk/filepond-plugin-zipper#readme",
+  "engines": {
+    "node": ">=14"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
