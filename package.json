@@ -2,16 +2,25 @@
   "name": "filepond-plugin-zipper",
   "version": "3.0.0",
   "description": "Zip Filepond Directory Uploads",
-  "source": "src/zipper.ts",
-  "main": "dist/zipper.js",
-  "module": "dist/zipper.esm.js",
+  "type": "module",
+  "main": "dist/zipper.cjs",
+  "module": "dist/zipper.js",
   "unpkg": "dist/zipper.min.js",
+  "types": "dist/zipper.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/zipper.d.ts",
+      "import": "./dist/zipper.js",
+      "require": "./dist/zipper.cjs",
+      "default": "./dist/zipper.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "microbundle --name FilepondZipper --globals jszip=JSZip",
-    "dev": "microbundle watch --name FilepondZipper --globals jszip=JSZip",
+    "build": "vite build",
+    "dev": "vite build --watch",
     "lint": "biome check src tests",
     "format": "biome format --write src tests",
     "test": "vitest run",
@@ -41,16 +50,16 @@
     "node": ">=20"
   },
   "dependencies": {
-    "jszip": "^3.10.1",
-    "yaml": "^2.8.2"
+    "jszip": "^3.10.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.6",
     "@vitest/coverage-v8": "^4.0.18",
     "filepond": "^4.32.12",
     "jsdom": "^28.1.0",
-    "microbundle": "^0.15.1",
     "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.0.18"
   }
 }
