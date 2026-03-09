@@ -38,7 +38,7 @@ export interface ZipFailed {
 export interface ZipperOptions {
   onStart?: (directories: ZipSuccess[]) => void;
   onSuccess?: (successes: ZipSuccess[]) => void;
-  onFailed?: (failures: ZipFailed[]) => void;
+  onError?: (failures: ZipFailed[]) => void;
   onEnd?: (successes: ZipSuccess[], failures: ZipFailed[]) => void;
 }
 

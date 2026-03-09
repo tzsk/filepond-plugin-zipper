@@ -6,7 +6,7 @@
 [![npm](https://img.shields.io/npm/v/filepond-plugin-zipper?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/filepond-plugin-zipper)
 [![npm](https://img.shields.io/npm/dt/filepond-plugin-zipper?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/filepond-plugin-zipper)
 
-This is an extension plugin for [Filepond](https://pqina.nl/filepond/) uploader where you can upload directories as ZIP Files instead of uploading each individual files in them separately.
+An extension plugin for the [FilePond](https://pqina.nl/filepond/) file uploader that allows you to upload entire directories as single ZIP files, rather than uploading each file individually.
 
 ## :package: Installation
 
@@ -29,7 +29,7 @@ $ yarn add filepond-plugin-zipper
 
 ## :fire: Usage
 
-This may differ depending upon the Framework you are using, but there is good documentation of how to register plugins in various Frameworks in Filepond website which you can follow.
+The implementation may vary depending on the framework you are using. Please refer to the official [FilePond documentation](https://pqina.nl/filepond/docs/getting-started/installation/) for detailed instructions on registering plugins across different frameworks.
 
 ```js
 import FilepondZipper from 'filepond-plugin-zipper';
@@ -39,9 +39,9 @@ FilePond.registerPlugin(FilepondZipper());
 
 ### :star: Hook Support
 
-In many cases, specially while using some reactive frameworks you might like to show some loading screen while it is zipping files which might take some time depending upon the directory size.
+Depending on the directory size, the zipping process may take some time. You may want to display a loading indicator during this process, especially when using reactive frameworks.
 
-In those cases you can pass an options object to `FilepondZipper()` with lifecycle hooks. This allows you to listen to when zipping starts, ends, succeeds, or fails, while the plugin handles adding the resulting zip files to FilePond.
+To accommodate this, you can pass an options object containing lifecycle hooks to `FilepondZipper()`. This enables you to listen to specific events (when the zipping process starts, succeeds, fails, or ends) while the plugin automatically handles adding the resulting ZIP files to FilePond.
 
 **Example:**
 ```js
@@ -58,7 +58,7 @@ FilePond.registerPlugin(FilepondZipper({
     // Fired when all zips are successfully generated
     console.log("Zipping succeeded for:", successes);
   },
-  onFailed: (failures) => {
+  onError: (failures) => {
     // Fired if any zip fails
     console.error("Zipping failed for:", failures);
   },
@@ -72,9 +72,9 @@ FilePond.registerPlugin(FilepondZipper({
 
 ## :microscope: Testing
 
-After Cloning the repository, install all npm dependencies by running: `npm install`.
+After cloning the repository, install all npm dependencies by running: `npm install`.
 
-Then Run Tests:
+Then, run the tests:
 
 ```bash
 $ npm run test
@@ -82,11 +82,11 @@ $ npm run test
 
 ## :date: Change log
 
-This repository follows semantic versioning. Please follow the releases to know about what changed.
+This repository follows semantic versioning. Please refer to the [Releases](https://github.com/tzsk/filepond-plugin-zipper/releases) page to see what has changed in each version.
 
 ## :heart: Contributing
 
-Please feel free to contribute ideas and PRs are most welcome.
+We welcome contributions! Please feel free to submit ideas, bug reports, and pull requests.
 
 ## :crown: Credits
 

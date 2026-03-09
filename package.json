@@ -1,7 +1,7 @@
 {
   "name": "filepond-plugin-zipper",
   "version": "3.0.0",
-  "description": "Zip Filepond Directory Uploads",
+  "description": "A FilePond plugin to upload entire directories as single ZIP files",
   "type": "module",
   "main": "dist/zipper.cjs",
   "module": "dist/zipper.js",
@@ -32,9 +32,13 @@
   },
   "keywords": [
     "filepond",
-    "zip directory",
-    "upload zipped directory",
-    "filepond zip directory"
+    "filepond-plugin",
+    "zip",
+    "directory",
+    "folder",
+    "upload",
+    "jszip",
+    "compression"
   ],
   "author": {
     "name": "Kazi Ahmed",
