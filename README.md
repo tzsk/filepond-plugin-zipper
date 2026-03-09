@@ -1,7 +1,7 @@
 # :gift: Filepond Plugin Zipper
 ![Filepond Plugin Zipper](./assets/zipper.png)
 
-![Build](https://img.shields.io/github/workflow/status/tzsk/filepond-plugin-zipper/Tests/master?logo=github&style=for-the-badge)
+![Build](https://img.shields.io/github/actions/workflow/status/tzsk/filepond-plugin-zipper/test.yml?branch=master&logo=github&style=for-the-badge)
 ![Coveralls](https://img.shields.io/coveralls/github/tzsk/filepond-plugin-zipper/master?logo=coveralls&style=for-the-badge)
 [![npm](https://img.shields.io/npm/v/filepond-plugin-zipper?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/filepond-plugin-zipper)
 [![npm](https://img.shields.io/npm/dt/filepond-plugin-zipper?logo=npm&style=for-the-badge)](https://www.npmjs.com/package/filepond-plugin-zipper)
