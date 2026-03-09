@@ -1,5 +1,5 @@
 import {Filter, PluginOptions, ZipperOptions, ItemType, ZipSuccess, ZipFailed} from './types';
-import {generateZip} from './utils';
+import {generateZip, toError} from './utils';
 
 const FilepondZipper =
   (options?: ZipperOptions) =>
@@ -29,7 +29,7 @@ const FilepondZipper =
           successZips.push({name: result.value.name});
           zipFiles.push(result.value.file);
         } else {
-          failedZips.push({name: generators[index].name, error: result.reason});
+          failedZips.push({name: generators[index].name, error: toError(result.reason)});
         }
       });
 
