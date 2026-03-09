@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import {Item, ItemType, OnUpdateCallback} from './types';
+import { Item, type ItemType, type OnUpdateCallback } from './types';
 
 const directories = {};
 
@@ -15,7 +15,9 @@ export const toError = (err: unknown): Error => {
   return new Error(String(err));
 };
 
-export const getDirectoryGroups = (items: ItemType[]): Record<string, ItemType[]> => {
+export const getDirectoryGroups = (
+  items: ItemType[],
+): Record<string, ItemType[]> => {
   items
     .filter((item) => item._relativePath)
     .forEach((item) => {
@@ -46,13 +48,12 @@ export const generateZip = (items: ItemType[]): ZipGenerator[] => {
       zip.file(file._relativePath, file);
     });
 
-    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
     delete directories[name];
 
     return {
       name: `${name}.zip`,
       generate: async (onUpdate?: OnUpdateCallback): Promise<ItemType> => {
-        const file = await zip.generateAsync({type: 'blob'}, onUpdate);
+        const file = await zip.generateAsync({ type: 'blob' }, onUpdate);
 
         return new Item([file], `${name}.zip`);
       },

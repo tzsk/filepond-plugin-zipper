@@ -5,7 +5,6 @@ interface TargetFilter {
 export type FilterKey = keyof TargetFilter;
 
 export interface ItemType extends File {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   _relativePath?: string;
 }
 
@@ -44,6 +43,5 @@ export interface ZipperOptions {
 }
 
 export class Item extends File implements ItemType {
-  // eslint-disable-next-line @typescript-eslint/naming-convention
   _relativePath?: string;
 }
