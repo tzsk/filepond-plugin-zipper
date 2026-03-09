@@ -33,7 +33,7 @@ export interface ZipSuccess {
 
 export interface ZipFailed {
   name: string;
-  error: Error | unknown;
+  error: Error;
 }
 
 export interface ZipperOptions {
