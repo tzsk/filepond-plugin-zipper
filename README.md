@@ -19,10 +19,10 @@ $ yarn add filepond-plugin-zipper
 ```
 ### CDN
 
-```
-https://cdn.jsdelivr.net/npm/jszip@3.5.0/dist/jszip.min.js
-// And...
-https://unpkg.com/filepond-plugin-zipper/dist/zipper.min.js
+```html
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<!-- And... -->
+<script src="https://cdn.jsdelivr.net/npm/filepond-plugin-zipper/dist/zipper.min.js"></script>
 ```
 
 > `JSZip` dependency is required while using via CDN.
