@@ -35,40 +35,39 @@ This may differ depending upon the Framework you are using, but there is good do
 import FilepondZipper from 'filepond-plugin-zipper';
 
 FilePond.registerPlugin(FilepondZipper());
-
-// Make sure you register it as a function
-// cause you can pass in hook to tap into the zip files.
 ```
 
 ### :star: Hook Support
 
 In many cases, specially while using some reactive frameworks you might like to show some loading screen while it is zipping files which might take some time depending upon the directory size.
 
-In those cases you can pass a callback function inside the `FilepondZipper()`. If you pass a callback then it won't add the zip files in the queue directly. Instead, it will give you the Array of Promise objects which you can tap into to show loading and inject the zip files when they are done.
+In those cases you can pass an options object to `FilepondZipper()` with lifecycle hooks. This allows you to listen to when zipping starts, ends, succeeds, or fails, while the plugin handles adding the resulting zip files to FilePond.
 
 **Example:**
 ```js
 const pond = FilePond.create(...);
 
-const injector = async (generators) => {
-  // Set Loading...
-  const files = await Promise.all(
-    generators.map(generate => generate())
-  );
-  pond.addFiles(files);
-  // Stop loading...
-
-  // OR. If you want to tap individually
-
-  // Set Loading...
-  generators.forEach(generate => {
-    const file = await generate();
-    pond.addFile(file);
-  });
-  // Stop Loading...
-};
-
-Filepond.registerPlugin(FilepondZipper(injector));
+FilePond.registerPlugin(FilepondZipper({
+  onStart: (directories) => {
+    // Fired when zipping process begins
+    // e.g. [{ name: "folder1.zip" }]
+    console.log("Zipping started for:", directories);
+    // Set loading...
+  },
+  onSuccess: (successes) => {
+    // Fired when all zips are successfully generated
+    console.log("Zipping succeeded for:", successes);
+  },
+  onFailed: (failures) => {
+    // Fired if any zip fails
+    console.error("Zipping failed for:", failures);
+  },
+  onEnd: (successes, failures) => {
+    // Fired when the entire zipping process ends (success or failure)
+    console.log("Zipping process completed.");
+    // Stop loading...
+  }
+}));
 ```
 
 ## :microscope: Testing
