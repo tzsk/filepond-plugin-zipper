@@ -1,5 +1,5 @@
 # :gift: Filepond Plugin Zipper
-![Filepond Plugin Zipper](./assets/zipper.svg)
+![Filepond Plugin Zipper](./assets/zipper.png)
 
 ![Build](https://img.shields.io/github/workflow/status/tzsk/filepond-plugin-zipper/Tests/master?logo=github&style=for-the-badge)
 ![Coveralls](https://img.shields.io/coveralls/github/tzsk/filepond-plugin-zipper/master?logo=coveralls&style=for-the-badge)
