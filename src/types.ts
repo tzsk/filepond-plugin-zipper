@@ -27,9 +27,21 @@ export interface Metadata {
 
 export type OnUpdateCallback = (metadata: Metadata) => void;
 
-export type GeneratorCallback = (onUpdate?: OnUpdateCallback) => Promise<ItemType>;
+export interface ZipSuccess {
+  name: string;
+}
 
-export type ZipperCallback = (generators: GeneratorCallback[]) => unknown;
+export interface ZipFailed {
+  name: string;
+  error: Error | unknown;
+}
+
+export interface ZipperOptions {
+  onStart?: (directories: ZipSuccess[]) => void;
+  onSuccess?: (successes: ZipSuccess[]) => void;
+  onFailed?: (failures: ZipFailed[]) => void;
+  onEnd?: (successes: ZipSuccess[], failures: ZipFailed[]) => void;
+}
 
 export class Item extends File implements ItemType {
   // eslint-disable-next-line @typescript-eslint/naming-convention
