@@ -35,7 +35,7 @@
   },
   "homepage": "https://github.com/tzsk/filepond-plugin-zipper#readme",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.6",
