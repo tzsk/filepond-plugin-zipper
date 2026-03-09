@@ -1,3 +1,3 @@
-import { Filter, PluginOptions, ZipperCallback } from './types';
-declare const FilepondZipper: (callback?: ZipperCallback) => ({ addFilter }: PluginOptions) => Filter;
+import type { Filter, PluginOptions, ZipperOptions } from './types';
+declare const FilepondZipper: (options?: ZipperOptions) => ({ addFilter }: PluginOptions) => Filter;
 export default FilepondZipper;
