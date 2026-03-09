@@ -19,7 +19,7 @@ const FilepondZipper =
         return plainFiles;
       }
 
-      const { onStart, onSuccess, onFailed, onEnd } = options || {};
+      const { onStart, onSuccess, onError, onEnd } = options || {};
 
       if (onStart) {
         onStart(generators.map((g) => ({ name: g.name })));
@@ -51,8 +51,8 @@ const FilepondZipper =
         onSuccess(successZips);
       }
 
-      if (onFailed && failedZips.length > 0) {
-        onFailed(failedZips);
+      if (onError && failedZips.length > 0) {
+        onError(failedZips);
       }
 
       if (onEnd) {

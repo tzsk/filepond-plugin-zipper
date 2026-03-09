@@ -1,8 +1,6 @@
 import JSZip from 'jszip';
 import { Item, type ItemType, type OnUpdateCallback } from './types';
 
-const directories = {};
-
 export const toError = (err: unknown): Error => {
   if (err instanceof Error) {
     return err;
@@ -18,10 +16,11 @@ export const toError = (err: unknown): Error => {
 export const getDirectoryGroups = (
   items: ItemType[],
 ): Record<string, ItemType[]> => {
+  const directories: Record<string, ItemType[]> = {};
   items
     .filter((item) => item._relativePath)
     .forEach((item) => {
-      const [, group] = item._relativePath.split('/');
+      const [group] = item._relativePath.split('/').filter(Boolean);
 
       if (!directories[group]) {
         directories[group] = [];
@@ -39,7 +38,7 @@ export interface ZipGenerator {
 }
 
 export const generateZip = (items: ItemType[]): ZipGenerator[] => {
-  getDirectoryGroups(items);
+  const directories = getDirectoryGroups(items);
 
   return Object.keys(directories).map((name) => {
     const zip = new JSZip();
@@ -47,8 +46,6 @@ export const generateZip = (items: ItemType[]): ZipGenerator[] => {
     directories[name].forEach((file) => {
       zip.file(file._relativePath, file);
     });
-
-    delete directories[name];
 
     return {
       name: `${name}.zip`,

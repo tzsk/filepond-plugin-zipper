@@ -43,13 +43,13 @@ describe('Plugin', () => {
 
     const onStart = vi.fn();
     const onSuccess = vi.fn();
-    const onFailed = vi.fn();
+    const onError = vi.fn();
     const onEnd = vi.fn();
 
     const pluginOptions = {
       onStart,
       onSuccess,
-      onFailed,
+      onError,
       onEnd,
     };
 
@@ -76,7 +76,7 @@ describe('Plugin', () => {
       { name: 'documents.zip' },
     ]);
 
-    expect(onFailed).not.toHaveBeenCalled();
+    expect(onError).not.toHaveBeenCalled();
 
     expect(onEnd).toHaveBeenCalledTimes(1);
     expect(onEnd).toHaveBeenCalledWith(
@@ -98,7 +98,7 @@ describe('Plugin', () => {
     );
   });
 
-  test('should invoke onFailed when JSZip fails', async () => {
+  test('should invoke onError when JSZip fails', async () => {
     const filters = [];
     const addFilter = (_key, callback) => {
       filters.push(callback);
@@ -112,13 +112,13 @@ describe('Plugin', () => {
 
     const onStart = vi.fn();
     const onSuccess = vi.fn();
-    const onFailed = vi.fn();
+    const onError = vi.fn();
     const onEnd = vi.fn();
 
     const pluginOptions = {
       onStart,
       onSuccess,
-      onFailed,
+      onError,
       onEnd,
     };
 
@@ -135,8 +135,8 @@ describe('Plugin', () => {
     const files = await filters[0]([brokenItem]);
 
     expect(files).toHaveLength(0);
-    expect(onFailed).toHaveBeenCalledTimes(1);
-    expect(onFailed).toHaveBeenCalledWith([
+    expect(onError).toHaveBeenCalledTimes(1);
+    expect(onError).toHaveBeenCalledWith([
       { name: 'broken_folder.zip', error: new Error('Zip failure test') },
     ]);
 
