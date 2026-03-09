@@ -10,6 +10,7 @@ export default defineConfig({
       include: ['src/**/*.ts'],
       exclude: ['**/*.{test,spec}.ts', 'dist/**/*.[jt]s', 'node_modules/'],
       reportsDirectory: 'coverage',
+      reporter: ['text', 'lcov'],
     },
     include: ['**/tests/?(*.)+(spec|test).[tj]s?(x)'],
     exclude: ['node_modules/'],

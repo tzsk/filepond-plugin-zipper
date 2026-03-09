@@ -37,6 +37,9 @@
   "engines": {
     "node": ">=20"
   },
+  "dependencies": {
+    "jszip": "^3.10.1"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.4.6",
     "@vitest/coverage-v8": "^4.0.18",
@@ -45,8 +48,5 @@
     "microbundle": "^0.15.1",
     "typescript": "^5.9.3",
     "vitest": "^4.0.18"
-  },
-  "dependencies": {
-    "jszip": "^3.10.1"
   }
 }
