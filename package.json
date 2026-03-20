@@ -60,7 +60,7 @@
     "@biomejs/biome": "^2.4.6",
     "@vitest/coverage-v8": "^4.0.18",
     "filepond": "^4.32.12",
-    "jsdom": "^28.1.0",
+    "jsdom": "^29.0.1",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-dts": "^4.5.4",
